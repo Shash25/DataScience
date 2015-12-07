@@ -1,0 +1,100 @@
+Ubuntu Setup for Data Science Part 1 - Git, R, MySql, Python
+
+#Ubuntu commands to check version:
+-- Check version of Ubuntu OS installed: $lsb_release -a
+-- Check 32/64 bit Ubuntu Installed: $uname -a
+
+
+#Ubuntu commands for updates: 
+-- Updates for Ubuntu (updates list of available packages): $sudo apt-get update
+-- Upgrades for Ubuntu (installs newer versions of packages): $sudo apt-get upgrade
+
+
+#Ubuntu commands to install Synaptic and other tools:
+-- Support for Mp3/Flash/Video: $ sudo apt-get install ubuntu-restricted-extras
+-- Synaptic Package Manager: $sudo apt-get install synaptic
+
+
+#Recommended Packages to Install via Synaptic Package Manager:
+-- General:
+chromium-browser
+vlc
+
+-- Git:
+git
+git-gui
+
+-- R:
+r-base
+r-base-core
+r-base-dev
+libzmq3 # package for R kernel
+libzmq3-dev # package for R kernel
+libjpeg62 #optional: development package for jpeg in R
+
+-- MySQL:
+mysql-client
+mysql-server
+mysql-workbench
+
+
+#Install R in Ubuntu:
+-- Install R: $sudo apt-get install littler
+
+# Update R using Synaptic: 
+-- Open the link: https://cran.r-project.org/bin/linux/ubuntu/README
+-- Check the Ubuntu Version and copy the correct deb path 
+-- Open the link: https://cran.r-project.org/mirrors.html
+-- Replace the link in Step 2 with the mirror. 
+   Examples for the above steps:
+   	#a. Example deb path => deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu wily/ 
+   	#b. Example mirror path => https://cran.rstudio.com/
+   	#c. Example output link => deb https://cran.rstudio.com//bin/linux/ubuntu wily/
+-- Open Synaptic -> Settings -> Repositories -> Other Software -> Add and Enter the ouptut link formed above
+-- Add the source, check mark the added source and click close
+-- Reload and finish installation
+-- To authenticate and Secure APT:
+   	#a. Go to the link: https://cran.r-project.org/bin/linux/ubuntu/README
+   	#b. Search for Secure Apt and add the key to the system via the terminal
+-- Restart the terminal
+
+
+#Install R Studio
+-- Website: https://www.rstudio.com/products/rstudio/download/
+
+
+#Install Python v2.7, Anaconda and Jupyter: 
+-- Download Anaconda Installer 32/64 bit for Python 2.7: https://www.continuum.io/downloads
+-- Copy downloaded file to the desired directory and execute the command below via terminal:
+   $bash Anaconda2-2.4.0-Linux-x86_64.sh
+-- Check python version: $python —-version
+-- Install jupyter via Anaconda: $conda install jupyter
+-- Update Conda Installer: $conda update conda
+-- Update Anaconda: $conda upadte anaconda
+-- Check ipython notebook: $ipython notebook
+-- Pymysql databse connectors for python: $conda install pymysql
+-- Update/Upgrade Ubuntu
+
+
+#Install R Kernel in Jupiter
+-- Update/Upgrade Ubuntu and Anaconda
+-- Open R via Ubuntu terminal and execute the following commands
+
+	#1. Install New Packages:
+	install.packages(
+  		c('rzmq','repr','IRkernel','IRdisplay'),
+  		repos = c('http://irkernel.github.io/', getOption('repos'))
+	)
+
+	#2. Install IR Kernel
+	IRkernel::installspec()
+
+
+#Basic Conda Commands
+-- Conda version: $conda --version
+-- Update Anaconda: $conda update anaconda
+-- Update Conda Installer:  $conda update conda
+-- List all installed conda packages: $conda list
+-- Search for a package: $conda search packageName
+-- Install conda packages: $conda install packageName or $pip install packageName
+-- Remove installed conda package: $conda remove packageName

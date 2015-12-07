@@ -1,0 +1,65 @@
+Mac OSX Setup for Data Science Part 1 - Git, R, MySql, Python
+
+#Install Homebrew via terminal: $ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+NOTE: Homebrew will be installed in the /usr/local directory
+
+
+#HomeBrew Commands for OSX:
+-- Updates for OSX (updates list of available packages): $brew update
+-- Upgrades for OSX (installs newer versions of packages): $brew upgrade
+-- List all the packages installed by brew: $brew list
+-- List broken packages/installers: $brew doctor
+
+
+#Install R in OSX via terminal:
+-- $brew tap homebrew/science
+-- $brew install gcc
+-- $brew install Caskroom/cask/xquartz
+-- $brew install r
+
+
+#Install R-Studio:
+-- Website: https://www.rstudio.com/products/rstudio/download/
+
+
+#Install MySQl
+-- Website: https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks
+-- Access mysql from terminal: mysql -u root -p 
+
+
+#Install Python v2.7, Anaconda and Jupyter: 
+-- Download Anaconda Installer 32/64 bit for Python 2.7: https://www.continuum.io/downloads
+-- Copy downloaded file to the desired directory and execute the command below via terminal:
+   $bash Anaconda2-2.4.0-Linux-x86_64.sh
+-- Check python version: $python —-version
+-- Install jupyter via Anaconda: $conda install jupyter
+-- Update Conda Installer: $conda update conda
+-- Update Anaconda: $conda upadte anaconda
+-- Check ipython notebook: $ipython notebook
+-- Pymysql databse connectors for python: $conda install pymysql
+-- Update/Upgrade brew
+
+
+#Install R Kernel for Jupyter
+-- Install zmq package: $brew install zmq
+-- Update/Upgrade brew
+-- Open R via Ubuntu terminal and execute the following commands:
+
+	#1. Install New Packages:
+	install.packages(
+  		c('rzmq','repr','IRkernel','IRdisplay'),
+  		repos = c('http://irkernel.github.io/', getOption('repos'))
+	)
+
+	#2. Install IR Kernel
+	IRkernel::installspec()
+
+
+#Basic Conda Commands
+-- Conda version: $conda --version
+-- Update Anaconda: $conda update anaconda
+-- Update Conda Installer:  $conda update conda
+-- List all installed conda packages: $conda list
+-- Search for a package: $conda search packageName
+-- Install conda packages: $conda install packageName or $pip install packageName
+-- Remove installed conda package: $conda remove packageName
