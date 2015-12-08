@@ -34,7 +34,7 @@ NOTE: Homebrew will be installed in the /usr/local directory
 -- Check python version: $python —-version
 -- Install jupyter via Anaconda: $conda install jupyter
 -- Update Conda Installer: $conda update conda
--- Update Anaconda: $conda upadte anaconda
+-- Update Anaconda: $conda update anaconda
 -- Check ipython notebook: $ipython notebook
 -- Pymysql databse connectors for python: $conda install pymysql
 -- Update/Upgrade brew
