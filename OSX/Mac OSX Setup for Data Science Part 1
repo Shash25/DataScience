@@ -31,6 +31,7 @@ NOTE: Homebrew will be installed in the /usr/local directory
 -- Download Anaconda Installer 32/64 bit for Python 2.7: https://www.continuum.io/downloads
 -- Copy downloaded file to the desired directory and execute the command below via terminal:
    $bash Anaconda2-2.4.0-Linux-x86_64.sh
+—- Restart the terminal
 -- Check python version: $python —-version
 -- Install jupyter via Anaconda: $conda install jupyter
 -- Update Conda Installer: $conda update conda
